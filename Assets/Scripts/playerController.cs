@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour {
 	public float speed = 4f;
+	public int health = 100;
 	public GameObject Laser;
+	public GameObject healthText;
 	Vector3 pos;
 	// Use this for initialization
 	void Start () {
@@ -13,8 +16,12 @@ public class playerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Move();
-		Shoot();
+		if (health > 0) {
+			Move();
+			Shoot();
+		}
+
+		healthText.GetComponent<Text>().text = "Health: " + health.ToString();
 	}
 
 	void Move() {
@@ -31,8 +38,7 @@ public class playerController : MonoBehaviour {
 	void Shoot() {
 		if (Input.GetMouseButtonDown(0)) {
 			GameObject laser = Instantiate(Laser);
-			laser.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
-			
+			laser.transform.position = new Vector2(transform.position.x, transform.position.y + 0.8f);
 		}
 	}
 }
