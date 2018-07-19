@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class laserController : MonoBehaviour {
-<<<<<<< HEAD
 	public float speed = 4f;
 	public string dir = "up";
 
@@ -12,17 +11,10 @@ public class laserController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-=======
-
-	// Use this for initialization
-	void Start () {
-		
->>>>>>> 5574b5521f5102724accbd3606b603d49964f5f3
 	}
 	
 	// Update is called once per frame
 	void Update () {
-<<<<<<< HEAD
 		Move();
 	}
 
@@ -58,8 +50,5 @@ public class laserController : MonoBehaviour {
 			other.gameObject.GetComponent<enemyController>().health -= 5;
 			Destroy(gameObject);
 		}
-=======
-		
->>>>>>> 5574b5521f5102724accbd3606b603d49964f5f3
 	}
 }
