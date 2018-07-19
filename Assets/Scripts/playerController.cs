@@ -32,6 +32,8 @@ public class playerController : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)) {
 			GameObject laser = Instantiate(Laser);
 			laser.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+
+			
 			
 		}
 	}
