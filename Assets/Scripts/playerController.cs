@@ -38,7 +38,14 @@ public class playerController : MonoBehaviour {
 	void Shoot() {
 		if (Input.GetMouseButtonDown(0)) {
 			GameObject laser = Instantiate(Laser);
+<<<<<<< HEAD
 			laser.transform.position = new Vector2(transform.position.x, transform.position.y + 0.8f);
+=======
+			laser.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+
+			
+			
+>>>>>>> 5574b5521f5102724accbd3606b603d49964f5f3
 		}
 	}
 }
