@@ -8,17 +8,27 @@ public class playerController : MonoBehaviour {
 	public int health = 100;
 	public GameObject Laser;
 	public GameObject healthText;
+	public GameObject transition;
 	Vector3 pos;
+	int score = 0;
 	// Use this for initialization
 	void Start () {
 		pos = transform.position;
+		score = 0;
+		health = 100;
+		speed = 5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (health > 0) {
+			score ++;
 			Move();
 			Shoot();
+		} else {
+			transition.GetComponent<sceneController>().changeScene(1);
+			transition.GetComponent<sceneController>().score = score;
+			Debug.Log(score);
 		}
 
 		healthText.GetComponent<Text>().text = "Health: " + health.ToString();

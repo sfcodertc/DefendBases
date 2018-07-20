@@ -50,5 +50,10 @@ public class laserController : MonoBehaviour {
 			other.gameObject.GetComponent<enemyController>().health -= 5;
 			Destroy(gameObject);
 		}
+
+		if (other.gameObject.tag == "Base") {
+			other.gameObject.GetComponent<baseController>().health -= 5;
+			Destroy(gameObject);
+		}
 	}
 }

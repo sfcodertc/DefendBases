@@ -18,7 +18,7 @@ public class enemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (enemyTimer >= 90) {
+		if (enemyTimer >= 30) {
 			spawnChance = Random.Range(1, 3);
 			healthChance = Random.Range(0, 20);
 
