@@ -41,18 +41,20 @@ public class laserController : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag == "Laser") {
-			if (other.gameObject.GetComponent<laserController>().dir == "down" && dir == "up"
-			 || other.gameObject.GetComponent<laserController>().dir == "up" && dir == "down")
+			if (dir == "up" && other.gameObject.GetComponent<laserController>().dir == "down" ||
+				dir == "down" && other.gameObject.GetComponent<laserController>().dir == "up")
 				Destroy(gameObject);
 		}
 
 		if (other.gameObject.tag == "Enemy") {
-			other.gameObject.GetComponent<enemyController>().health -= 5;
-			Destroy(gameObject);
+			if (dir == "up") {
+				other.gameObject.GetComponent<enemyController>().health -= 5;
+				Destroy(gameObject);
+			}
 		}
 
 		if (other.gameObject.tag == "Base") {
-			other.gameObject.GetComponent<baseController>().health -= 5;
+			other.gameObject.GetComponent<baseController>().health -= 7;
 			Destroy(gameObject);
 		}
 	}

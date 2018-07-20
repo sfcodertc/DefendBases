@@ -54,5 +54,9 @@ public class enemyController : MonoBehaviour {
 			col.gameObject.GetComponent<playerController>().health -= 20;
 			Destroy(gameObject);
 		}
+
+		if (col.gameObject.tag == "Base") {
+			col.gameObject.GetComponent<baseController>().health -= 30;
+		}
 	}
 }
